@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour {
     public float runspeed = 40f;
     public float screenTop = 0f;
     public float screenBot = 0f;
+    public GameObject levelEdges;
     private Vector3 velocity = Vector3.zero;
     float horizontalMove = 0f;
     float verticalMove = 0f;
@@ -49,6 +50,8 @@ public class PlayerMovement : MonoBehaviour {
         float newY = transform.position.y + vert;
 
         newY = Mathf.Clamp(newY, screenBot, screenTop);
+
+       
 
         transform.position = new Vector3(newX, newY, 0);
 
