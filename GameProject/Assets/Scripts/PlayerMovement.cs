@@ -8,14 +8,10 @@ public class PlayerMovement : MonoBehaviour {
     public float screenTop = 0f;
     public float screenBot = 0f;
     public GameObject levelEdges;
-    private Vector3 velocity = Vector3.zero;
     float horizontalMove = 0f;
     float verticalMove = 0f;
     private bool m_FacingRight = true;  // For determining which way the player is currently facing.
-    [Range(0, .3f)] [SerializeField] private float m_MovementSmoothing = .05f;	// How much to smooth out the movement
-
-    private Rigidbody2D m_Rigidbody2D;
-
+    
     private void Update()
     {
        horizontalMove   = Input.GetAxisRaw("Horizontal") * runspeed;
@@ -26,32 +22,15 @@ public class PlayerMovement : MonoBehaviour {
     {
         Move(horizontalMove * Time.fixedDeltaTime, verticalMove * Time.fixedDeltaTime);
     }
-
-    private void Awake()
-    {
-        m_Rigidbody2D = GetComponent<Rigidbody2D>();
-    }
-
+    
     // Update is called once per frame
     public void Move(float horz, float vert)
     {
-
-        // Move the character by finding the target velocity
-        /*Vector3 targetVelocity = new Vector2(horz * 10f, vert * 10f);//m_Rigidbody2D.velocity.y);
-        Debug.Log(targetVelocity.y);
-        Debug.Log(transform.position.y);
-        if (transform.position.y + targetVelocity.y > screenTop)
-            targetVelocity.y = 0;
-            
-         // And then smoothing it out and applying it to the character
-        m_Rigidbody2D.velocity = Vector3.SmoothDamp(m_Rigidbody2D.velocity, targetVelocity, ref velocity, m_MovementSmoothing);*/
 
         float newX = transform.position.x + horz;
         float newY = transform.position.y + vert;
 
         newY = Mathf.Clamp(newY, screenBot, screenTop);
-
-       
 
         transform.position = new Vector3(newX, newY, 0);
 
