@@ -5,17 +5,39 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour {
 
     public float runspeed = 40f;
-    public float screenTop = 0f;
-    public float screenBot = 0f;
+    float screenTop = 0f;
+    float screenBot = 0f;
+    float screenRight = 0f;
+    float screenLeft = 0f;
     public GameObject levelEdges;
     float horizontalMove = 0f;
     float verticalMove = 0f;
     private bool m_FacingRight = true;  // For determining which way the player is currently facing.
+    private BoxCollider2D edges;
+    private BoxCollider2D body;
+    public GameObject weapon;
+    bool attacking = false;
     
+    private void Start()
+    {
+        weapon = transform.GetChild(0).gameObject;
+        body = GetComponent<BoxCollider2D>();
+        edges = levelEdges.GetComponent<BoxCollider2D>();
+        Vector3 worldPos = edges.bounds.center;
+
+        screenBot = worldPos.y - (edges.bounds.size.y / 2f) + (body.size.y / 2f);
+        screenTop = worldPos.y + (edges.bounds.size.y / 2f) + (body.size.y / 2f);
+        screenRight = worldPos.x + (edges.bounds.size.x / 2) - (body.size.x / 2f);
+        screenLeft = worldPos.x - (edges.bounds.size.x / 2) + (body.size.x / 2f);
+        Debug.Log(weapon.name);
+    }
+
     private void Update()
     {
        horizontalMove   = Input.GetAxisRaw("Horizontal") * runspeed;
        verticalMove     = Input.GetAxisRaw("Vertical") * runspeed;
+       if (Input.GetButtonDown("Fire1"))
+            StartCoroutine(attack());
     }
 
     private void FixedUpdate()
@@ -31,6 +53,8 @@ public class PlayerMovement : MonoBehaviour {
         float newY = transform.position.y + vert;
 
         newY = Mathf.Clamp(newY, screenBot, screenTop);
+        newX = Mathf.Clamp(newX, screenLeft, screenRight);
+        
 
         transform.position = new Vector3(newX, newY, 0);
 
@@ -46,6 +70,45 @@ public class PlayerMovement : MonoBehaviour {
             // ... flip the player.
             Flip();
         }
+    }
+
+    public IEnumerator attack()
+    {
+         if (!attacking)
+        {
+            Vector3 temp;
+            attacking = true;
+            for (int i = 0; i < 60; i++)
+            {
+                CircleCollider2D rotpoint = GetComponent<CircleCollider2D>();
+                if (m_FacingRight)
+                    temp = new Vector3(rotpoint.offset.x, rotpoint.offset.y, 0);
+                else
+                    temp = new Vector3(-rotpoint.offset.x, rotpoint.offset.y, 0);
+                Vector3 point = transform.position + temp;
+                if (m_FacingRight)
+                    weapon.transform.RotateAround(point, Vector3.forward, -90 * Time.deltaTime);
+                else
+                    weapon.transform.RotateAround(point, Vector3.forward, 90 * Time.deltaTime);
+                yield return new WaitForSeconds(.001f);
+            }
+            for (int i = 0; i < 60; i++)
+            {
+                CircleCollider2D rotpoint = GetComponent<CircleCollider2D>();
+                if (m_FacingRight)
+                    temp = new Vector3(rotpoint.offset.x, rotpoint.offset.y, 0);
+                else
+                    temp = new Vector3(-rotpoint.offset.x, rotpoint.offset.y, 0);
+                Vector3 point = transform.position + temp;
+                if (m_FacingRight)
+                    weapon.transform.RotateAround(point, Vector3.forward, 90 * Time.deltaTime);
+                else
+                    weapon.transform.RotateAround(point, Vector3.forward, -90 * Time.deltaTime);
+                yield return new WaitForSeconds(.001f);
+            }
+            
+             attacking = false;
+         }
     }
 
     private void Flip()
