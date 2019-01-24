@@ -25,10 +25,10 @@ public class PlayerMovement : MonoBehaviour {
         edges = levelEdges.GetComponent<BoxCollider2D>();
         Vector3 worldPos = edges.bounds.center;
 
-        screenBot = worldPos.y - (edges.bounds.size.y / 2f) + (body.size.y / 2f);
-        screenTop = worldPos.y + (edges.bounds.size.y / 2f) + (body.size.y / 2f);
-        screenRight = worldPos.x + (edges.bounds.size.x / 2) - (body.size.x / 2f);
-        screenLeft = worldPos.x - (edges.bounds.size.x / 2) + (body.size.x / 2f);
+        screenBot = worldPos.y - (edges.bounds.size.y / 2f);
+        screenTop = worldPos.y + (edges.bounds.size.y / 2f);
+        screenRight = worldPos.x + (edges.bounds.size.x / 2) - (body.size.x / 2f) + (body.offset.x);
+        screenLeft = worldPos.x - (edges.bounds.size.x / 2) + (body.size.x / 2f) + (body.offset.x ); ;
         Debug.Log(weapon.name);
     }
 
