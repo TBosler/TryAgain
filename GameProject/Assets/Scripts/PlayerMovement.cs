@@ -39,7 +39,7 @@ public class PlayerMovement : MonoBehaviour {
         horizontalMove   = Input.GetAxisRaw("Horizontal") * runspeed;
         verticalMove     = Input.GetAxisRaw("Vertical") * runspeed;
 
-        animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
+        animator.SetFloat("Speed", Mathf.Abs(horizontalMove) + Mathf.Abs(verticalMove));
 
         if (Input.GetButtonDown("Fire1"))
             StartCoroutine(attack());
@@ -53,6 +53,9 @@ public class PlayerMovement : MonoBehaviour {
     // Update is called once per frame
     public void Move(float horz, float vert)
     {
+        //Debug.Log(horz);
+        //Debug.Log(vert);
+
 
         float newX = transform.position.x + horz;
         float newY = transform.position.y + vert;

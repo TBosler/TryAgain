@@ -112,6 +112,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &338829033 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6117289723498591766, guid: 3731bcf7c9ea09f4388792c9e51bef42,
+    type: 3}
+  m_PrefabInstance: {fileID: 6117289723166058751}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &443703005
 GameObject:
   m_ObjectHideFlags: 3
@@ -163,7 +169,7 @@ MonoBehaviour:
   m_YDamping: 1
   m_ZDamping: 1
   m_ScreenX: 0.5
-  m_ScreenY: 1
+  m_ScreenY: 0.5
   m_CameraDistance: 10
   m_DeadZoneWidth: 0
   m_DeadZoneHeight: 0
@@ -172,7 +178,7 @@ MonoBehaviour:
   m_SoftZoneWidth: 0.8
   m_SoftZoneHeight: 0.8
   m_BiasX: 0
-  m_BiasY: -0.49999997
+  m_BiasY: 0
   m_GroupFramingMode: 2
   m_AdjustmentMode: 2
   m_GroupFramingSize: 0.8
@@ -301,7 +307,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 905218882}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -14.379999, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 443703006}
@@ -344,10 +350,10 @@ MonoBehaviour:
   m_Priority: 10
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
-  m_Follow: {fileID: 7005472895812930898}
+  m_Follow: {fileID: 338829033}
   m_Lens:
     FieldOfView: 40
-    OrthographicSize: 15
+    OrthographicSize: 20
     NearClipPlane: 0.1
     FarClipPlane: 5000
     Dutch: 0
@@ -621,7 +627,7 @@ Camera:
   far clip plane: 5000
   field of view: 40
   orthographic: 1
-  orthographic size: 15
+  orthographic size: 20
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -645,7 +651,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1591092416}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.75, y: -7, z: -10}
+  m_LocalPosition: {x: 9.87, y: -5.870001, z: -9.541331}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 905218883}
@@ -726,9 +732,3 @@ PrefabInstance:
       objectReference: {fileID: 1217413790}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3731bcf7c9ea09f4388792c9e51bef42, type: 3}
---- !u!4 &7005472895812930898 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3881129728458581421, guid: 3731bcf7c9ea09f4388792c9e51bef42,
-    type: 3}
-  m_PrefabInstance: {fileID: 6117289723166058751}
-  m_PrefabAsset: {fileID: 0}
