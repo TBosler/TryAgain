@@ -17,13 +17,15 @@ public class PlayerMovement : MonoBehaviour {
     private BoxCollider2D body;
     public GameObject weapon;
     bool attacking = false;
-    
+    Animator animator;
+
     private void Start()
     {
         weapon = transform.GetChild(0).gameObject;
         body = GetComponent<BoxCollider2D>();
         edges = levelEdges.GetComponent<BoxCollider2D>();
         Vector3 worldPos = edges.bounds.center;
+        animator = GetComponentInChildren<Animator>();
 
         screenBot = worldPos.y - (edges.bounds.size.y / 2f);
         screenTop = worldPos.y + (edges.bounds.size.y / 2f);
@@ -34,9 +36,12 @@ public class PlayerMovement : MonoBehaviour {
 
     private void Update()
     {
-       horizontalMove   = Input.GetAxisRaw("Horizontal") * runspeed;
-       verticalMove     = Input.GetAxisRaw("Vertical") * runspeed;
-       if (Input.GetButtonDown("Fire1"))
+        horizontalMove   = Input.GetAxisRaw("Horizontal") * runspeed;
+        verticalMove     = Input.GetAxisRaw("Vertical") * runspeed;
+
+        animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
+
+        if (Input.GetButtonDown("Fire1"))
             StartCoroutine(attack());
     }
 
