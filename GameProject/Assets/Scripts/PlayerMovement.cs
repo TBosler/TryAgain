@@ -49,10 +49,11 @@ public class PlayerMovement : MonoBehaviour {
 
     private void LateUpdate()
     {
+        animator.SetBool("Attacking", attacking);
         if (Input.GetButtonDown("Fire1"))
         {
-            head.sprite = testSprite;
-            //StartCoroutine(attack());
+            //head.sprite = testSprite;
+            StartCoroutine(attack());
         }
     }
 
@@ -95,9 +96,10 @@ public class PlayerMovement : MonoBehaviour {
     {
          if (!attacking)
         {
+            attacking = true;
 
-
-            Vector3 temp;
+            yield return new WaitForSeconds(.5f);
+            /*Vector3 temp;
             attacking = true;
             for (int i = 0; i < 60; i++)
             {
@@ -126,9 +128,9 @@ public class PlayerMovement : MonoBehaviour {
                 else
                     weapon.transform.RotateAround(point, Vector3.forward, -90 * Time.deltaTime);
                 yield return new WaitForSeconds(.001f);
-            }
-            
-             attacking = false;
+            }*/
+
+            attacking = false;
          }
     }
 
