@@ -45,6 +45,8 @@ public class PlayerMovement : MonoBehaviour {
         verticalMove     = Input.GetAxisRaw("Vertical") * runspeed;
 
         animator.SetFloat("Speed", Mathf.Abs(horizontalMove) + Mathf.Abs(verticalMove));
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("OverhandAttack"))
+            attacking = false;
     }
 
     private void LateUpdate()
