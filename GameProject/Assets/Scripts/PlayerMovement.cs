@@ -41,16 +41,18 @@ public class PlayerMovement : MonoBehaviour {
 
     private void Update()
     {
-        horizontalMove   = Input.GetAxisRaw("Horizontal") * runspeed;
-        verticalMove     = Input.GetAxisRaw("Vertical") * runspeed;
-
-        animator.SetFloat("Speed", Mathf.Abs(horizontalMove) + Mathf.Abs(verticalMove));
+        horizontalMove = Input.GetAxisRaw("Horizontal") * runspeed;
+        verticalMove = Input.GetAxisRaw("Vertical") * runspeed;
+      
         if (animator.GetCurrentAnimatorStateInfo(0).IsName("OverhandAttack"))
             attacking = false;
     }
 
     private void LateUpdate()
     {
+        if(!attacking)
+            animator.SetFloat("Speed", Mathf.Abs(horizontalMove) + Mathf.Abs(verticalMove));
+
         animator.SetBool("Attacking", attacking);
         if (Input.GetButtonDown("Fire1"))
         {
@@ -61,7 +63,8 @@ public class PlayerMovement : MonoBehaviour {
 
     private void FixedUpdate()
     {
-        Move(horizontalMove * Time.fixedDeltaTime, verticalMove * Time.fixedDeltaTime);
+        if(!attacking)
+            Move(horizontalMove * Time.fixedDeltaTime, verticalMove * Time.fixedDeltaTime);
     }
     
     // Update is called once per frame
@@ -131,8 +134,6 @@ public class PlayerMovement : MonoBehaviour {
                     weapon.transform.RotateAround(point, Vector3.forward, -90 * Time.deltaTime);
                 yield return new WaitForSeconds(.001f);
             }*/
-
-            attacking = false;
          }
     }
 
