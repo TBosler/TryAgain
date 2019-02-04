@@ -43,9 +43,6 @@ public class PlayerMovement : MonoBehaviour {
     {
         horizontalMove = Input.GetAxisRaw("Horizontal") * runspeed;
         verticalMove = Input.GetAxisRaw("Vertical") * runspeed;
-      
-        if (animator.GetCurrentAnimatorStateInfo(0).IsName("OverhandAttack"))
-            attacking = false;
     }
 
     private void LateUpdate()
@@ -59,10 +56,16 @@ public class PlayerMovement : MonoBehaviour {
             //head.sprite = testSprite;
             StartCoroutine(attack());
         }
+
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("OverhandAttack") && animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1.0f)
+        {
+            attacking = false;
+        }
     }
 
     private void FixedUpdate()
     {
+        Debug.Log(attacking);
         if(!attacking)
             Move(horizontalMove * Time.fixedDeltaTime, verticalMove * Time.fixedDeltaTime);
     }
