@@ -24,8 +24,8 @@ public class PlayerMovement : MonoBehaviour {
 
     private void Start()
     {
-        head = this.transform.Find("/DragonWomen/Dragonwoman (Sprite)/bone_1/bone_17/bone_18/bone_19/bone_20/bone_21/Tail").GetComponent<SpriteRenderer>();
-        old = head.sprite;
+        //head = this.transform.Find("/DragonWomen/Dragonwoman (Sprite)/bone_1/bone_17/bone_18/bone_19/bone_20/bone_21/Tail").GetComponent<SpriteRenderer>();
+        //old = head.sprite;
         weapon = transform.GetChild(0).gameObject;
         body = GetComponent<BoxCollider2D>();
         edges = levelEdges.GetComponent<BoxCollider2D>();
