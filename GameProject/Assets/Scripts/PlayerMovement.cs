@@ -18,9 +18,14 @@ public class PlayerMovement : MonoBehaviour {
     public GameObject weapon;
     bool attacking = false;
     Animator animator;
+    private SpriteRenderer head;
+    public Sprite testSprite;
+    public Sprite old;
 
     private void Start()
     {
+        head = this.transform.Find("/DragonWomen/Dragonwoman (Sprite)/bone_1/bone_17/bone_18/bone_19/bone_20/bone_21/Tail").GetComponent<SpriteRenderer>();
+        old = head.sprite;
         weapon = transform.GetChild(0).gameObject;
         body = GetComponent<BoxCollider2D>();
         edges = levelEdges.GetComponent<BoxCollider2D>();
@@ -40,9 +45,15 @@ public class PlayerMovement : MonoBehaviour {
         verticalMove     = Input.GetAxisRaw("Vertical") * runspeed;
 
         animator.SetFloat("Speed", Mathf.Abs(horizontalMove) + Mathf.Abs(verticalMove));
+    }
 
+    private void LateUpdate()
+    {
         if (Input.GetButtonDown("Fire1"))
-            StartCoroutine(attack());
+        {
+            head.sprite = testSprite;
+            //StartCoroutine(attack());
+        }
     }
 
     private void FixedUpdate()
@@ -84,6 +95,8 @@ public class PlayerMovement : MonoBehaviour {
     {
          if (!attacking)
         {
+
+
             Vector3 temp;
             attacking = true;
             for (int i = 0; i < 60; i++)
