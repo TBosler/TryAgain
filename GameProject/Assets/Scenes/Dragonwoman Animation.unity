@@ -420,6 +420,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 100000, guid: 0f3fd809a546ff3458589a1805625ded, type: 3}
+      propertyPath: m_Name
+      value: Dragonwoman (Sprite)
+      objectReference: {fileID: 0}
     - target: {fileID: 400040, guid: 0f3fd809a546ff3458589a1805625ded, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0.67476094
@@ -654,11 +658,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400062, guid: 0f3fd809a546ff3458589a1805625ded, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0028737267
+      value: 0.0028737453
       objectReference: {fileID: 0}
     - target: {fileID: 400062, guid: 0f3fd809a546ff3458589a1805625ded, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9999959
+      value: 0.99999595
       objectReference: {fileID: 0}
     - target: {fileID: 400062, guid: 0f3fd809a546ff3458589a1805625ded, type: 3}
       propertyPath: m_LocalPosition.x
@@ -887,10 +891,6 @@ PrefabInstance:
     - target: {fileID: 400000, guid: 0f3fd809a546ff3458589a1805625ded, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 0f3fd809a546ff3458589a1805625ded, type: 3}
-      propertyPath: m_Name
-      value: Dragonwoman (Sprite)
       objectReference: {fileID: 0}
     - target: {fileID: 21200014, guid: 0f3fd809a546ff3458589a1805625ded, type: 3}
       propertyPath: m_SortingOrder
