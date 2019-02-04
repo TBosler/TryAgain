@@ -6,6 +6,7 @@ public class Robot : MonoBehaviour
 {
     Animator animator;
     private GameObject Br2, Br1, Br3, F1, F2, F3, Fl1, Fl2, Fl3;
+    public float animTime;
 
     // Start is called before the first frame update
     void Start()
@@ -44,7 +45,7 @@ public class Robot : MonoBehaviour
         int part = 2;
         while (true)
         {
-            yield return new WaitForSecondsRealtime(.05f);
+            yield return new WaitForSecondsRealtime(animTime);
             switch (part)
             {
                 case 1:
