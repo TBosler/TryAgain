@@ -47,7 +47,7 @@ public class PlayerMovement : MonoBehaviour {
 
     private void LateUpdate()
     {
-        if(!attacking)
+        if(!animator.GetCurrentAnimatorStateInfo(0).IsName("OverhandAttack"))
             animator.SetFloat("Speed", Mathf.Abs(horizontalMove) + Mathf.Abs(verticalMove));
 
         animator.SetBool("Attacking", attacking);
@@ -57,7 +57,7 @@ public class PlayerMovement : MonoBehaviour {
             StartCoroutine(attack());
         }
 
-        if (animator.GetCurrentAnimatorStateInfo(0).IsName("OverhandAttack") && animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1.0f)
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("OverhandAttack"))
         {
             attacking = false;
         }
@@ -66,7 +66,7 @@ public class PlayerMovement : MonoBehaviour {
     private void FixedUpdate()
     {
         Debug.Log(attacking);
-        if(!attacking)
+        if(!animator.GetCurrentAnimatorStateInfo(0).IsName("OverhandAttack"))
             Move(horizontalMove * Time.fixedDeltaTime, verticalMove * Time.fixedDeltaTime);
     }
     
