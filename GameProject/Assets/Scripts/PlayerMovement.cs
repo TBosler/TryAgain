@@ -36,7 +36,7 @@ public class PlayerMovement : MonoBehaviour {
         screenTop = worldPos.y + (edges.bounds.size.y / 2f);
         screenRight = worldPos.x + (edges.bounds.size.x / 2) - (body.size.x / 2f) + (body.offset.x);
         screenLeft = worldPos.x - (edges.bounds.size.x / 2) + (body.size.x / 2f) + (body.offset.x ); ;
-        Debug.Log(weapon.name);
+        //Debug.Log(weapon.name);
     }
 
     private void Update()
@@ -65,7 +65,7 @@ public class PlayerMovement : MonoBehaviour {
 
     private void FixedUpdate()
     {
-        Debug.Log(attacking);
+        //Debug.Log(attacking);
         if(!animator.GetCurrentAnimatorStateInfo(0).IsName("OverhandAttack"))
             Move(horizontalMove * Time.fixedDeltaTime, verticalMove * Time.fixedDeltaTime);
     }
@@ -75,7 +75,20 @@ public class PlayerMovement : MonoBehaviour {
     {
         //Debug.Log(horz);
         //Debug.Log(vert);
-
+        // If the input is moving the player right and the player is facing left...
+        if (horz > 0 && !m_FacingRight)
+        {
+            // ... flip the player.
+            Flip();
+            return;
+        }
+        // Otherwise if the input is moving the player left and the player is facing right...
+        else if (horz < 0 && m_FacingRight)
+        {
+            // ... flip the player.
+            Flip();
+            return;
+        }
 
         float newX = transform.position.x + horz;
         float newY = transform.position.y + vert;
@@ -86,18 +99,7 @@ public class PlayerMovement : MonoBehaviour {
 
         transform.position = new Vector3(newX, newY, 0);
 
-        // If the input is moving the player right and the player is facing left...
-        if (horz > 0 && !m_FacingRight)
-        {
-            // ... flip the player.
-            Flip();
-        }
-        // Otherwise if the input is moving the player left and the player is facing right...
-        else if (horz < 0 && m_FacingRight)
-        {
-            // ... flip the player.
-            Flip();
-        }
+
     }
 
     public IEnumerator attack()

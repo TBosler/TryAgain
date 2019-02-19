@@ -1,12 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Robot : MonoBehaviour
 {
     Animator animator;
     private GameObject Br2, Br1, Br3, F1, F2, F3, Fl1, Fl2, Fl3;
     public float animTime;
+    public int health = 20;
+    public TMPro.TextMeshPro healthText;
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +35,9 @@ public class Robot : MonoBehaviour
         Fl3.SetActive(false);
         animator = GetComponentInChildren<Animator>();
         StartCoroutine(Animate());
+
+        //healthText.text = health.ToString();
+        
     }
 
     // Update is called once per frame
@@ -92,5 +98,19 @@ public class Robot : MonoBehaviour
                     }
             }
         }
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        //Debug.Log("collision");
+        Debug.Log(other.gameObject.name + " HIT " + gameObject.name);
+        if(other.gameObject.tag == "weapon")
+        {
+            Debug.Log("You hit the enemy");
+            Weapon weapon = other.gameObject.GetComponent<Weapon>();
+            health -= weapon.damage;
+            healthText.text = health.ToString();
+        }
+
     }
 }
