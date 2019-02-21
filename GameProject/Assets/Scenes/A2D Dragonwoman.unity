@@ -259,7 +259,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: -1
   far clip plane: 1000
   field of view: 60
   orthographic: 1
@@ -365,13 +365,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 154514607}
-  m_LocalRotation: {x: -7.7104767e-10, y: 2.2286925e-10, z: 0.57674587, w: 0.8169236}
-  m_LocalPosition: {x: 3.6404536, y: 0.00030457333, z: -0.0000018629405}
+  m_LocalRotation: {x: -7.610856e-10, y: 2.5482152e-10, z: 0.6103032, w: 0.7921679}
+  m_LocalPosition: {x: 3.6404536, y: 0.00030457333, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 735622720}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 70.444}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 75.22301}
 --- !u!114 &154514609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -460,13 +460,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 468535265}
-  m_LocalRotation: {x: -0, y: -0, z: 0.58073044, w: 0.8140959}
+  m_LocalRotation: {x: 0, y: 0, z: 0.6200891, w: 0.7845314}
   m_LocalPosition: {x: 3.5607736, y: 0.00043535803, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1832123760}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 71.004005}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 76.645004}
 --- !u!114 &468535267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -524,7 +524,6 @@ GameObject:
   m_Component:
   - component: {fileID: 590239269}
   - component: {fileID: 590239272}
-  - component: {fileID: 590239271}
   - component: {fileID: 590239270}
   m_Layer: 0
   m_Name: Dragon-Sword_0001_F-Pauldron
@@ -547,8 +546,8 @@ Transform:
   m_Father: {fileID: 3053815}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &590239270
-MeshRenderer:
+--- !u!137 &590239270
+SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -584,14 +583,19 @@ MeshRenderer:
   m_SortingLayerID: -921261287
   m_SortingLayer: 2
   m_SortingOrder: 12
---- !u!33 &590239271
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 590239268}
+  serializedVersion: 2
+  m_Quality: 0
+  m_UpdateWhenOffscreen: 0
+  m_SkinnedMotionVectors: 1
   m_Mesh: {fileID: 0}
+  m_Bones:
+  - {fileID: 1067704849}
+  m_BlendShapeWeights: []
+  m_RootBone: {fileID: 1067704849}
+  m_AABB:
+    m_Center: {x: -0.0374943, y: 0.07162118, z: 0}
+    m_Extent: {x: 1.1079489, y: 1.0712333, z: 0}
+  m_DirtyAABB: 0
 --- !u!114 &590239272
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -610,7 +614,8 @@ MonoBehaviour:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_SortingLayerID: -921261287
   m_SortingOrder: 12
-  m_BoneTransforms: []
+  m_BoneTransforms:
+  - {fileID: 1067704849}
 --- !u!1 &648425227
 GameObject:
   m_ObjectHideFlags: 0
@@ -737,8 +742,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 677873993}
-  m_LocalRotation: {x: 0, y: 0, z: -0.13825567, w: 0.9903966}
-  m_LocalPosition: {x: 2.9301624, y: -0.00000046929927, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: -0.13825487, w: 0.99039674}
+  m_LocalPosition: {x: 2.9301717, y: -8.731149e-10, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 878863578}
@@ -758,7 +763,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 0.05842829, g: 0.9528302, b: 0.94379383, a: 1}
-  m_Length: 1.2800002
+  m_Length: 1.2800013
   m_ChildTransform: {fileID: 878863578}
   m_AttachedIK: {fileID: 0}
 --- !u!1 &683033978
@@ -771,7 +776,6 @@ GameObject:
   m_Component:
   - component: {fileID: 683033979}
   - component: {fileID: 683033982}
-  - component: {fileID: 683033981}
   - component: {fileID: 683033980}
   m_Layer: 0
   m_Name: Dragon-Sword_0020_Tail
@@ -794,8 +798,8 @@ Transform:
   m_Father: {fileID: 3053815}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 5.8560004}
---- !u!23 &683033980
-MeshRenderer:
+--- !u!137 &683033980
+SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -831,14 +835,23 @@ MeshRenderer:
   m_SortingLayerID: -921261287
   m_SortingLayer: 2
   m_SortingOrder: 7
---- !u!33 &683033981
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 683033978}
+  serializedVersion: 2
+  m_Quality: 0
+  m_UpdateWhenOffscreen: 0
+  m_SkinnedMotionVectors: 1
   m_Mesh: {fileID: 0}
+  m_Bones:
+  - {fileID: 49910190}
+  - {fileID: 82236121}
+  - {fileID: 753483522}
+  - {fileID: 367194158}
+  - {fileID: 1200819451}
+  m_BlendShapeWeights: []
+  m_RootBone: {fileID: 49910190}
+  m_AABB:
+    m_Center: {x: 1.893044, y: 0.7558016, z: 0}
+    m_Extent: {x: 2.9897895, y: 1.9033837, z: 0}
+  m_DirtyAABB: 0
 --- !u!114 &683033982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -857,7 +870,12 @@ MonoBehaviour:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_SortingLayerID: -921261287
   m_SortingOrder: 7
-  m_BoneTransforms: []
+  m_BoneTransforms:
+  - {fileID: 49910190}
+  - {fileID: 82236121}
+  - {fileID: 753483522}
+  - {fileID: 367194158}
+  - {fileID: 1200819451}
 --- !u!1 &686874673
 GameObject:
   m_ObjectHideFlags: 0
@@ -868,7 +886,6 @@ GameObject:
   m_Component:
   - component: {fileID: 686874674}
   - component: {fileID: 686874677}
-  - component: {fileID: 686874676}
   - component: {fileID: 686874675}
   m_Layer: 0
   m_Name: Dragon-Sword_0012_UF-Leg
@@ -891,8 +908,8 @@ Transform:
   m_Father: {fileID: 3053815}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &686874675
-MeshRenderer:
+--- !u!137 &686874675
+SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -928,14 +945,20 @@ MeshRenderer:
   m_SortingLayerID: -921261287
   m_SortingLayer: 2
   m_SortingOrder: 8
---- !u!33 &686874676
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 686874673}
+  serializedVersion: 2
+  m_Quality: 0
+  m_UpdateWhenOffscreen: 0
+  m_SkinnedMotionVectors: 1
   m_Mesh: {fileID: 0}
+  m_Bones:
+  - {fileID: 1333492246}
+  - {fileID: 2105758219}
+  m_BlendShapeWeights: []
+  m_RootBone: {fileID: 1333492246}
+  m_AABB:
+    m_Center: {x: 1.5518068, y: -0.41322687, z: 0}
+    m_Extent: {x: 2.1023421, y: 1.0540843, z: 0}
+  m_DirtyAABB: 0
 --- !u!114 &686874677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -954,7 +977,9 @@ MonoBehaviour:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_SortingLayerID: -921261287
   m_SortingOrder: 8
-  m_BoneTransforms: []
+  m_BoneTransforms:
+  - {fileID: 1333492246}
+  - {fileID: 2105758219}
 --- !u!1 &735622719
 GameObject:
   m_ObjectHideFlags: 0
@@ -979,14 +1004,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 735622719}
-  m_LocalRotation: {x: 9.3677954e-11, y: -4.314984e-10, z: -0.04982575, w: 0.99875796}
+  m_LocalRotation: {x: 6.449138e-11, y: -4.3681472e-10, z: 0.017353415, w: 0.99984944}
   m_LocalPosition: {x: 2.9701366, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.1398158, y: 1, z: 1}
   m_Children:
   - {fileID: 154514608}
   m_Father: {fileID: 1444871448}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -5.7120004}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 1.9890001}
 --- !u!114 &735622721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1000,7 +1025,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 0.013616921, g: 0.9622642, b: 0.10171394, a: 1}
-  m_Length: 3.6404576
+  m_Length: 3.640453
   m_ChildTransform: {fileID: 154514608}
   m_AttachedIK: {fileID: 0}
 --- !u!1 &753483521
@@ -1061,7 +1086,6 @@ GameObject:
   m_Component:
   - component: {fileID: 780227603}
   - component: {fileID: 780227606}
-  - component: {fileID: 780227605}
   - component: {fileID: 780227604}
   m_Layer: 0
   m_Name: Dragon-Sword_0017_B-Hand
@@ -1078,14 +1102,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 780227602}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.44, y: -4.06, z: 0}
+  m_LocalPosition: {x: 1.25, y: -4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3053815}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &780227604
-MeshRenderer:
+--- !u!137 &780227604
+SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1121,14 +1145,19 @@ MeshRenderer:
   m_SortingLayerID: -921261287
   m_SortingLayer: 2
   m_SortingOrder: 3
---- !u!33 &780227605
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 780227602}
+  serializedVersion: 2
+  m_Quality: 0
+  m_UpdateWhenOffscreen: 0
+  m_SkinnedMotionVectors: 1
   m_Mesh: {fileID: 0}
+  m_Bones:
+  - {fileID: 1640567143}
+  m_BlendShapeWeights: []
+  m_RootBone: {fileID: 1640567143}
+  m_AABB:
+    m_Center: {x: 0.3786028, y: 0.060174108, z: 0}
+    m_Extent: {x: 0.8984532, y: 0.73828185, z: 0}
+  m_DirtyAABB: 0
 --- !u!114 &780227606
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1147,7 +1176,8 @@ MonoBehaviour:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_SortingLayerID: -921261287
   m_SortingOrder: 3
-  m_BoneTransforms: []
+  m_BoneTransforms:
+  - {fileID: 1640567143}
 --- !u!1 &855207409
 GameObject:
   m_ObjectHideFlags: 0
@@ -1158,7 +1188,6 @@ GameObject:
   m_Component:
   - component: {fileID: 855207413}
   - component: {fileID: 855207412}
-  - component: {fileID: 855207411}
   - component: {fileID: 855207410}
   m_Layer: 0
   m_Name: Dragon-Sword_0015_UB-Leg
@@ -1167,8 +1196,8 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!23 &855207410
-MeshRenderer:
+--- !u!137 &855207410
+SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1204,14 +1233,20 @@ MeshRenderer:
   m_SortingLayerID: -921261287
   m_SortingLayer: 2
   m_SortingOrder: 4
---- !u!33 &855207411
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 855207409}
+  serializedVersion: 2
+  m_Quality: 0
+  m_UpdateWhenOffscreen: 0
+  m_SkinnedMotionVectors: 1
   m_Mesh: {fileID: 0}
+  m_Bones:
+  - {fileID: 2105758219}
+  - {fileID: 1444871448}
+  m_BlendShapeWeights: []
+  m_RootBone: {fileID: 2105758219}
+  m_AABB:
+    m_Center: {x: -1.7111576, y: -0.36897174, z: 0.008892184}
+    m_Extent: {x: 1.9395292, y: 1.1390253, z: 0.02727676}
+  m_DirtyAABB: 0
 --- !u!114 &855207412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1230,7 +1265,9 @@ MonoBehaviour:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_SortingLayerID: -921261287
   m_SortingOrder: 4
-  m_BoneTransforms: []
+  m_BoneTransforms:
+  - {fileID: 2105758219}
+  - {fileID: 1444871448}
 --- !u!4 &855207413
 Transform:
   m_ObjectHideFlags: 0
@@ -1302,7 +1339,6 @@ GameObject:
   m_Component:
   - component: {fileID: 931631149}
   - component: {fileID: 931631152}
-  - component: {fileID: 931631151}
   - component: {fileID: 931631150}
   m_Layer: 0
   m_Name: Dragon-Sword_0016_B-Pauldron
@@ -1325,8 +1361,8 @@ Transform:
   m_Father: {fileID: 3053815}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &931631150
-MeshRenderer:
+--- !u!137 &931631150
+SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1362,14 +1398,19 @@ MeshRenderer:
   m_SortingLayerID: -921261287
   m_SortingLayer: 2
   m_SortingOrder: 0
---- !u!33 &931631151
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 931631148}
+  serializedVersion: 2
+  m_Quality: 0
+  m_UpdateWhenOffscreen: 0
+  m_SkinnedMotionVectors: 1
   m_Mesh: {fileID: 0}
+  m_Bones:
+  - {fileID: 1595248505}
+  m_BlendShapeWeights: []
+  m_RootBone: {fileID: 1595248505}
+  m_AABB:
+    m_Center: {x: 0.131585, y: -0.14273965, z: 0}
+    m_Extent: {x: 1.067658, y: 1.0799977, z: 0}
+  m_DirtyAABB: 0
 --- !u!114 &931631152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1388,7 +1429,8 @@ MonoBehaviour:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_SortingLayerID: -921261287
   m_SortingOrder: 0
-  m_BoneTransforms: []
+  m_BoneTransforms:
+  - {fileID: 1595248505}
 --- !u!1 &1067704848
 GameObject:
   m_ObjectHideFlags: 0
@@ -1413,14 +1455,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1067704848}
-  m_LocalRotation: {x: -0, y: -0, z: 0.9944584, w: 0.10513168}
-  m_LocalPosition: {x: 2.6164691, y: -0.223073, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.9970706, w: 0.076486185}
+  m_LocalPosition: {x: 2.5871775, y: -0.0106008835, z: 0}
+  m_LocalScale: {x: 0.93254757, y: 1, z: 1}
   m_Children:
   - {fileID: 1272742809}
   m_Father: {fileID: 1228254099}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 167.93001}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 171.227}
 --- !u!114 &1067704850
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1434,7 +1476,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 0.8773585, g: 0.6824513, b: 0.086908154, a: 1}
-  m_Length: 3.1502333
+  m_Length: 3.150231
   m_ChildTransform: {fileID: 1272742809}
   m_AttachedIK: {fileID: 0}
 --- !u!1 &1094410044
@@ -1447,7 +1489,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1094410045}
   - component: {fileID: 1094410048}
-  - component: {fileID: 1094410047}
   - component: {fileID: 1094410046}
   m_Layer: 0
   m_Name: Dragon-Sword_0005_LF-Arm
@@ -1470,8 +1511,8 @@ Transform:
   m_Father: {fileID: 3053815}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -72.98801}
---- !u!23 &1094410046
-MeshRenderer:
+--- !u!137 &1094410046
+SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1507,14 +1548,19 @@ MeshRenderer:
   m_SortingLayerID: -921261287
   m_SortingLayer: 2
   m_SortingOrder: 12
---- !u!33 &1094410047
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1094410044}
+  serializedVersion: 2
+  m_Quality: 0
+  m_UpdateWhenOffscreen: 0
+  m_SkinnedMotionVectors: 1
   m_Mesh: {fileID: 0}
+  m_Bones:
+  - {fileID: 1272742809}
+  m_BlendShapeWeights: []
+  m_RootBone: {fileID: 1272742809}
+  m_AABB:
+    m_Center: {x: 1.152853, y: 0.047239542, z: 0}
+    m_Extent: {x: 2.0158327, y: 0.847968, z: 0}
+  m_DirtyAABB: 0
 --- !u!114 &1094410048
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1533,7 +1579,8 @@ MonoBehaviour:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_SortingLayerID: -921261287
   m_SortingOrder: 12
-  m_BoneTransforms: []
+  m_BoneTransforms:
+  - {fileID: 1272742809}
 --- !u!1 &1097600230
 GameObject:
   m_ObjectHideFlags: 0
@@ -1650,7 +1697,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1141827224}
   - component: {fileID: 1141827227}
-  - component: {fileID: 1141827226}
   - component: {fileID: 1141827225}
   m_Layer: 0
   m_Name: Dragon-Sword_0004_Thumb
@@ -1667,14 +1713,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1141827223}
   m_LocalRotation: {x: -0, y: -0, z: -0.51999706, w: 0.85416806}
-  m_LocalPosition: {x: 1.26, y: -4.11, z: 0}
+  m_LocalPosition: {x: 1.2320001, y: -4.054, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3053815}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -62.664}
---- !u!23 &1141827225
-MeshRenderer:
+--- !u!137 &1141827225
+SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1710,14 +1756,19 @@ MeshRenderer:
   m_SortingLayerID: -921261287
   m_SortingLayer: 2
   m_SortingOrder: 13
---- !u!33 &1141827226
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1141827223}
+  serializedVersion: 2
+  m_Quality: 0
+  m_UpdateWhenOffscreen: 0
+  m_SkinnedMotionVectors: 1
   m_Mesh: {fileID: 0}
+  m_Bones:
+  - {fileID: 1923036744}
+  m_BlendShapeWeights: []
+  m_RootBone: {fileID: 1923036744}
+  m_AABB:
+    m_Center: {x: 0.45886195, y: 0.6391809, z: 0}
+    m_Extent: {x: 0.4230368, y: 0.25052285, z: 0}
+  m_DirtyAABB: 0
 --- !u!114 &1141827227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1736,7 +1787,8 @@ MonoBehaviour:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_SortingLayerID: -921261287
   m_SortingOrder: 13
-  m_BoneTransforms: []
+  m_BoneTransforms:
+  - {fileID: 1923036744}
 --- !u!1 &1200819450
 GameObject:
   m_ObjectHideFlags: 0
@@ -1808,7 +1860,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1228254098}
-  m_LocalRotation: {x: 0, y: 0, z: -0.01627676, w: 0.9998676}
+  m_LocalRotation: {x: 0, y: 0, z: -0.016277622, w: 0.99986756}
   m_LocalPosition: {x: 2.5500832, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1831,7 +1883,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 0.06074228, g: 0.990566, b: 0.91396374, a: 1}
-  m_Length: 2.9301624
+  m_Length: 2.9301717
   m_ChildTransform: {fileID: 677873994}
   m_AttachedIK: {fileID: 0}
 --- !u!1 &1272742808
@@ -1858,14 +1910,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1272742808}
-  m_LocalRotation: {x: -0, y: -0, z: 0.25557956, w: 0.966788}
+  m_LocalRotation: {x: 0, y: 0, z: 0.20635307, w: 0.97847766}
   m_LocalPosition: {x: 3.1502314, y: -0.000004172325, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.1489717, y: 1, z: 1}
   m_Children:
   - {fileID: 1923036744}
   m_Father: {fileID: 1067704849}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 29.616001}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 23.817001}
 --- !u!114 &1272742810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1879,7 +1931,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 0.8396226, g: 0.73788697, b: 0.019802418, a: 1}
-  m_Length: 2.7200053
+  m_Length: 2.6659412
   m_ChildTransform: {fileID: 1923036744}
   m_AttachedIK: {fileID: 0}
 --- !u!1 &1297351304
@@ -1892,7 +1944,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1297351305}
   - component: {fileID: 1297351308}
-  - component: {fileID: 1297351307}
   - component: {fileID: 1297351306}
   m_Layer: 0
   m_Name: Dragon-Sword_0002_F-Hand
@@ -1909,14 +1960,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1297351304}
   m_LocalRotation: {x: -0, y: -0, z: -0.537909, w: 0.8430029}
-  m_LocalPosition: {x: 0.72, y: -4.07, z: 0}
+  m_LocalPosition: {x: 0.648, y: -3.967, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3053815}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -65.083}
---- !u!23 &1297351306
-MeshRenderer:
+--- !u!137 &1297351306
+SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1952,14 +2003,19 @@ MeshRenderer:
   m_SortingLayerID: -921261287
   m_SortingLayer: 2
   m_SortingOrder: 15
---- !u!33 &1297351307
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1297351304}
+  serializedVersion: 2
+  m_Quality: 0
+  m_UpdateWhenOffscreen: 0
+  m_SkinnedMotionVectors: 1
   m_Mesh: {fileID: 0}
+  m_Bones:
+  - {fileID: 1923036744}
+  m_BlendShapeWeights: []
+  m_RootBone: {fileID: 1923036744}
+  m_AABB:
+    m_Center: {x: 0.24691573, y: 0.0050773025, z: 0}
+    m_Extent: {x: 0.8597617, y: 0.71402633, z: 0}
+  m_DirtyAABB: 0
 --- !u!114 &1297351308
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1978,7 +2034,8 @@ MonoBehaviour:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_SortingLayerID: -921261287
   m_SortingOrder: 15
-  m_BoneTransforms: []
+  m_BoneTransforms:
+  - {fileID: 1923036744}
 --- !u!1 &1333492245
 GameObject:
   m_ObjectHideFlags: 0
@@ -2003,14 +2060,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1333492245}
-  m_LocalRotation: {x: -0, y: -0, z: -0.99804986, w: 0.06242308}
-  m_LocalPosition: {x: -0.39336273, y: -0.116579235, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: -0.99985194, w: -0.017207881}
+  m_LocalPosition: {x: -0.33147344, y: -0.56006813, z: 0}
+  m_LocalScale: {x: 0.90519685, y: 1, z: 1}
   m_Children:
   - {fileID: 1832123760}
   m_Father: {fileID: 2105758219}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -172.84201}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -181.97198}
 --- !u!114 &1333492247
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2024,7 +2081,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 0.00000012318293, b: 0, a: 1}
-  m_Length: 3.0604255
+  m_Length: 3.0604236
   m_ChildTransform: {fileID: 1832123760}
   m_AttachedIK: {fileID: 0}
 --- !u!1 &1396153198
@@ -2139,7 +2196,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1399588894}
   - component: {fileID: 1399588897}
-  - component: {fileID: 1399588896}
   - component: {fileID: 1399588895}
   m_Layer: 0
   m_Name: Dragon-Sword_0014_LB-Leg
@@ -2162,8 +2218,8 @@ Transform:
   m_Father: {fileID: 3053815}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -2.3700001}
---- !u!23 &1399588895
-MeshRenderer:
+--- !u!137 &1399588895
+SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2199,14 +2255,20 @@ MeshRenderer:
   m_SortingLayerID: -921261287
   m_SortingLayer: 2
   m_SortingOrder: 5
---- !u!33 &1399588896
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1399588893}
+  serializedVersion: 2
+  m_Quality: 0
+  m_UpdateWhenOffscreen: 0
+  m_SkinnedMotionVectors: 1
   m_Mesh: {fileID: 0}
+  m_Bones:
+  - {fileID: 735622720}
+  - {fileID: 154514608}
+  m_BlendShapeWeights: []
+  m_RootBone: {fileID: 735622720}
+  m_AABB:
+    m_Center: {x: 1.4808618, y: -0.013647735, z: 0.00021882169}
+    m_Extent: {x: 2.5151362, y: 1.2343853, z: 0.018313585}
+  m_DirtyAABB: 0
 --- !u!114 &1399588897
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2225,7 +2287,9 @@ MonoBehaviour:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_SortingLayerID: -921261287
   m_SortingOrder: 5
-  m_BoneTransforms: []
+  m_BoneTransforms:
+  - {fileID: 735622720}
+  - {fileID: 154514608}
 --- !u!1 &1444871447
 GameObject:
   m_ObjectHideFlags: 0
@@ -2250,14 +2314,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1444871447}
-  m_LocalRotation: {x: -0.003431021, y: -0.00022852793, z: -0.9989184, w: 0.04637155}
-  m_LocalPosition: {x: -0.41337872, y: -0.7311435, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0.0034074895, y: -0.00046167738, z: -0.99975705, w: -0.021770502}
+  m_LocalPosition: {x: -0.33046088, y: -0.8992195, z: 0}
+  m_LocalScale: {x: 0.9362539, y: 1, z: 1}
   m_Children:
   - {fileID: 735622720}
   m_Father: {fileID: 2105758219}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: -0.044000003, y: 0.39200002, z: -174.684}
+  m_LocalEulerAnglesHint: {x: -0.044000003, y: 0.39200002, z: -182.495}
 --- !u!114 &1444871449
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2284,7 +2348,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1535870279}
   - component: {fileID: 1535870282}
-  - component: {fileID: 1535870281}
   - component: {fileID: 1535870280}
   m_Layer: 0
   m_Name: Dragon-Sword_0006_UF-Arm
@@ -2307,8 +2370,8 @@ Transform:
   m_Father: {fileID: 3053815}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &1535870280
-MeshRenderer:
+--- !u!137 &1535870280
+SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2344,14 +2407,19 @@ MeshRenderer:
   m_SortingLayerID: -921261287
   m_SortingLayer: 2
   m_SortingOrder: 11
---- !u!33 &1535870281
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1535870278}
+  serializedVersion: 2
+  m_Quality: 0
+  m_UpdateWhenOffscreen: 0
+  m_SkinnedMotionVectors: 1
   m_Mesh: {fileID: 0}
+  m_Bones:
+  - {fileID: 1067704849}
+  m_BlendShapeWeights: []
+  m_RootBone: {fileID: 1067704849}
+  m_AABB:
+    m_Center: {x: NaN, y: NaN, z: NaN}
+    m_Extent: {x: -Infinity, y: -Infinity, z: -Infinity}
+  m_DirtyAABB: 0
 --- !u!114 &1535870282
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2370,7 +2438,8 @@ MonoBehaviour:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_SortingLayerID: -921261287
   m_SortingOrder: 11
-  m_BoneTransforms: []
+  m_BoneTransforms:
+  - {fileID: 1067704849}
 --- !u!1 &1595248504
 GameObject:
   m_ObjectHideFlags: 0
@@ -2395,14 +2464,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1595248504}
-  m_LocalRotation: {x: -0, y: -0, z: -0.99370974, w: -0.11198637}
-  m_LocalPosition: {x: 2.599894, y: -0.9843377, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: -0.9908568, w: -0.1349178}
+  m_LocalPosition: {x: 2.6762233, y: -0.75015604, z: 0}
+  m_LocalScale: {x: 0.9655954, y: 1, z: 1}
   m_Children:
   - {fileID: 1684519556}
   m_Father: {fileID: 1228254099}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -192.85999}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -195.508}
 --- !u!114 &1595248506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2416,7 +2485,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 0.038848326, g: 0.14436899, b: 0.9150943, a: 1}
-  m_Length: 3.0200002
+  m_Length: 3.0200005
   m_ChildTransform: {fileID: 1684519556}
   m_AttachedIK: {fileID: 0}
 --- !u!1 &1640567142
@@ -2490,14 +2559,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1684519555}
-  m_LocalRotation: {x: -0, y: -0, z: 0.2750798, w: 0.9614214}
+  m_LocalRotation: {x: 0, y: 0, z: 0.28055945, w: 0.95983666}
   m_LocalPosition: {x: 3.02, y: -0.0000014305115, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.1086748, y: 1, z: 1}
   m_Children:
   - {fileID: 1640567143}
   m_Father: {fileID: 1595248505}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 31.934002}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 32.587}
 --- !u!114 &1684519557
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2511,7 +2580,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 0.057849795, g: 0.17676684, b: 0.9433962, a: 1}
-  m_Length: 2.630001
+  m_Length: 2.6300032
   m_ChildTransform: {fileID: 1640567143}
   m_AttachedIK: {fileID: 0}
 --- !u!1 &1694955727
@@ -2524,7 +2593,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1694955731}
   - component: {fileID: 1694955730}
-  - component: {fileID: 1694955729}
   - component: {fileID: 1694955728}
   m_Layer: 0
   m_Name: Dragon-Sword_0011_LF-Leg
@@ -2533,8 +2601,8 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!23 &1694955728
-MeshRenderer:
+--- !u!137 &1694955728
+SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2570,14 +2638,20 @@ MeshRenderer:
   m_SortingLayerID: -921261287
   m_SortingLayer: 2
   m_SortingOrder: 9
---- !u!33 &1694955729
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1694955727}
+  serializedVersion: 2
+  m_Quality: 0
+  m_UpdateWhenOffscreen: 0
+  m_SkinnedMotionVectors: 1
   m_Mesh: {fileID: 0}
+  m_Bones:
+  - {fileID: 1832123760}
+  - {fileID: 468535266}
+  m_BlendShapeWeights: []
+  m_RootBone: {fileID: 1832123760}
+  m_AABB:
+    m_Center: {x: 1.4085453, y: -0.29611182, z: 0}
+    m_Extent: {x: 2.469177, y: 1.4328468, z: 0}
+  m_DirtyAABB: 0
 --- !u!114 &1694955730
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2596,7 +2670,9 @@ MonoBehaviour:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_SortingLayerID: -921261287
   m_SortingOrder: 9
-  m_BoneTransforms: []
+  m_BoneTransforms:
+  - {fileID: 1832123760}
+  - {fileID: 468535266}
 --- !u!4 &1694955731
 Transform:
   m_ObjectHideFlags: 0
@@ -2621,7 +2697,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1820946725}
   - component: {fileID: 1820946728}
-  - component: {fileID: 1820946727}
   - component: {fileID: 1820946726}
   m_Layer: 0
   m_Name: Dragon-Sword_0019_UB-Arm
@@ -2638,14 +2713,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1820946724}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.99, y: 0.2, z: 0}
+  m_LocalPosition: {x: 0.9, y: 0.42, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3053815}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &1820946726
-MeshRenderer:
+--- !u!137 &1820946726
+SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2681,14 +2756,19 @@ MeshRenderer:
   m_SortingLayerID: -921261287
   m_SortingLayer: 2
   m_SortingOrder: 1
---- !u!33 &1820946727
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1820946724}
+  serializedVersion: 2
+  m_Quality: 0
+  m_UpdateWhenOffscreen: 0
+  m_SkinnedMotionVectors: 1
   m_Mesh: {fileID: 0}
+  m_Bones:
+  - {fileID: 1595248505}
+  m_BlendShapeWeights: []
+  m_RootBone: {fileID: 1595248505}
+  m_AABB:
+    m_Center: {x: 1.5607748, y: -0.09005359, z: 0}
+    m_Extent: {x: 2.0574884, y: 1.0708325, z: 0}
+  m_DirtyAABB: 0
 --- !u!114 &1820946728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2707,7 +2787,8 @@ MonoBehaviour:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_SortingLayerID: -921261287
   m_SortingOrder: 1
-  m_BoneTransforms: []
+  m_BoneTransforms:
+  - {fileID: 1595248505}
 --- !u!1 &1832123759
 GameObject:
   m_ObjectHideFlags: 0
@@ -2732,14 +2813,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1832123759}
-  m_LocalRotation: {x: -0, y: -0, z: -0.050906464, w: 0.9987035}
+  m_LocalRotation: {x: 0, y: 0, z: 0.008996689, w: 0.9999595}
   m_LocalPosition: {x: 3.0604239, y: -0.000013291836, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2057201, y: 1, z: 1}
   m_Children:
   - {fileID: 468535266}
   m_Father: {fileID: 1333492246}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -5.8360004}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 1.031}
 --- !u!114 &1832123761
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2753,7 +2834,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 0.9245283, g: 0.10902455, b: 0.10902455, a: 1}
-  m_Length: 3.560778
+  m_Length: 3.5607734
   m_ChildTransform: {fileID: 468535266}
   m_AttachedIK: {fileID: 0}
 --- !u!1 &1843832361
@@ -2766,7 +2847,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1843832365}
   - component: {fileID: 1843832364}
-  - component: {fileID: 1843832363}
   - component: {fileID: 1843832362}
   m_Layer: 0
   m_Name: Dragon-Sword_0013_B-Foot
@@ -2775,8 +2855,8 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!23 &1843832362
-MeshRenderer:
+--- !u!137 &1843832362
+SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2812,14 +2892,19 @@ MeshRenderer:
   m_SortingLayerID: -921261287
   m_SortingLayer: 2
   m_SortingOrder: 6
---- !u!33 &1843832363
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1843832361}
+  serializedVersion: 2
+  m_Quality: 0
+  m_UpdateWhenOffscreen: 0
+  m_SkinnedMotionVectors: 1
   m_Mesh: {fileID: 0}
+  m_Bones:
+  - {fileID: 154514608}
+  m_BlendShapeWeights: []
+  m_RootBone: {fileID: 154514608}
+  m_AABB:
+    m_Center: {x: 0.11856341, y: 0.01799196, z: 0.000083201565}
+    m_Extent: {x: 1.6392529, y: 0.7988194, z: 0.0078143375}
+  m_DirtyAABB: 0
 --- !u!114 &1843832364
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2838,7 +2923,8 @@ MonoBehaviour:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_SortingLayerID: -921261287
   m_SortingOrder: 6
-  m_BoneTransforms: []
+  m_BoneTransforms:
+  - {fileID: 154514608}
 --- !u!4 &1843832365
 Transform:
   m_ObjectHideFlags: 0
@@ -2863,7 +2949,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1856758825}
   - component: {fileID: 1856758828}
-  - component: {fileID: 1856758827}
   - component: {fileID: 1856758826}
   m_Layer: 0
   m_Name: Dragon-Sword_0018_LB-Arm
@@ -2880,14 +2965,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1856758824}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.68, y: -2.3, z: 0}
+  m_LocalPosition: {x: 0.52, y: -2.1399999, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3053815}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &1856758826
-MeshRenderer:
+--- !u!137 &1856758826
+SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2923,14 +3008,19 @@ MeshRenderer:
   m_SortingLayerID: -921261287
   m_SortingLayer: 2
   m_SortingOrder: 2
---- !u!33 &1856758827
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1856758824}
+  serializedVersion: 2
+  m_Quality: 0
+  m_UpdateWhenOffscreen: 0
+  m_SkinnedMotionVectors: 1
   m_Mesh: {fileID: 0}
+  m_Bones:
+  - {fileID: 1684519556}
+  m_BlendShapeWeights: []
+  m_RootBone: {fileID: 1684519556}
+  m_AABB:
+    m_Center: {x: 1.1759756, y: 0.02355367, z: 0}
+    m_Extent: {x: 2.0368917, y: 0.89769113, z: 0}
+  m_DirtyAABB: 0
 --- !u!114 &1856758828
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2949,7 +3039,8 @@ MonoBehaviour:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_SortingLayerID: -921261287
   m_SortingOrder: 2
-  m_BoneTransforms: []
+  m_BoneTransforms:
+  - {fileID: 1684519556}
 --- !u!1 &1923036743
 GameObject:
   m_ObjectHideFlags: 0
@@ -2974,13 +3065,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1923036743}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.7200027, y: -0.00000078976154, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0.024755953, w: 0.9996936}
+  m_LocalPosition: {x: 2.6659412, y: -0.00000032782555, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1272742809}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 3.4050002}
 --- !u!114 &1923036745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3111,7 +3202,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2067433817}
   - component: {fileID: 2067433816}
-  - component: {fileID: 2067433815}
   - component: {fileID: 2067433814}
   m_Layer: 0
   m_Name: Dragon-Sword_0010_F-Foot
@@ -3120,8 +3210,8 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!23 &2067433814
-MeshRenderer:
+--- !u!137 &2067433814
+SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -3157,14 +3247,19 @@ MeshRenderer:
   m_SortingLayerID: -921261287
   m_SortingLayer: 2
   m_SortingOrder: 10
---- !u!33 &2067433815
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2067433813}
+  serializedVersion: 2
+  m_Quality: 0
+  m_UpdateWhenOffscreen: 0
+  m_SkinnedMotionVectors: 1
   m_Mesh: {fileID: 0}
+  m_Bones:
+  - {fileID: 468535266}
+  m_BlendShapeWeights: []
+  m_RootBone: {fileID: 468535266}
+  m_AABB:
+    m_Center: {x: 0.09234655, y: 0.011799216, z: 0}
+    m_Extent: {x: 1.6285514, y: 0.78900546, z: 0}
+  m_DirtyAABB: 0
 --- !u!114 &2067433816
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3183,7 +3278,8 @@ MonoBehaviour:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_SortingLayerID: -921261287
   m_SortingOrder: 10
-  m_BoneTransforms: []
+  m_BoneTransforms:
+  - {fileID: 468535266}
 --- !u!4 &2067433817
 Transform:
   m_ObjectHideFlags: 0
