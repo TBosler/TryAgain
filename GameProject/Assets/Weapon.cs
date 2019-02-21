@@ -9,7 +9,7 @@ public class Weapon : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         //Debug.Log("collision");
-        Debug.Log(other.gameObject.name + " GOT HIT BY " + gameObject.name);
+        //Debug.Log(other.gameObject.name + " GOT HIT BY " + gameObject.name);
         //if(other.gameObject.)
 
     }

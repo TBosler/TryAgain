@@ -9,7 +9,8 @@ public class Robot : MonoBehaviour
     private GameObject Br2, Br1, Br3, F1, F2, F3, Fl1, Fl2, Fl3;
     public float animTime;
     public int health = 20;
-    public TMPro.TextMeshPro healthText;
+    public TMPro.TMP_Text healthText;
+    bool iFrames = false;
 
     // Start is called before the first frame update
     void Start()
@@ -36,14 +37,7 @@ public class Robot : MonoBehaviour
         animator = GetComponentInChildren<Animator>();
         StartCoroutine(Animate());
 
-        //healthText.text = health.ToString();
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        healthText.text = health.ToString();
     }
 
     private IEnumerator Animate()
@@ -102,15 +96,23 @@ public class Robot : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        //Debug.Log("collision");
-        Debug.Log(other.gameObject.name + " HIT " + gameObject.name);
-        if(other.gameObject.tag == "weapon")
+        //Debug.Log(other.gameObject.name + " HIT " + gameObject.name);
+        if(other.gameObject.tag == "Weapon" && !iFrames)
         {
-            Debug.Log("You hit the enemy");
+            StartCoroutine(IFrames());
+            //Debug.Log("You hit the enemy");
             Weapon weapon = other.gameObject.GetComponent<Weapon>();
             health -= weapon.damage;
             healthText.text = health.ToString();
+
         }
 
+    }
+
+    private IEnumerator IFrames()
+    {
+        iFrames = true;
+        yield return new WaitForSecondsRealtime(.5f);
+        iFrames = false;
     }
 }

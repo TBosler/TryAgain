@@ -15,18 +15,12 @@ public class PlayerMovement : MonoBehaviour {
     private bool m_FacingRight = true;  // For determining which way the player is currently facing.
     private BoxCollider2D edges;
     private BoxCollider2D body;
-    public GameObject weapon;
     bool attacking = false;
     Animator animator;
-    private SpriteRenderer head;
-    public Sprite testSprite;
-    public Sprite old;
+    public GameObject character;
 
     private void Start()
     {
-        //head = this.transform.Find("/DragonWomen/Dragonwoman (Sprite)/bone_1/bone_17/bone_18/bone_19/bone_20/bone_21/Tail").GetComponent<SpriteRenderer>();
-        //old = head.sprite;
-        weapon = transform.GetChild(0).gameObject;
         body = GetComponent<BoxCollider2D>();
         edges = levelEdges.GetComponent<BoxCollider2D>();
         Vector3 worldPos = edges.bounds.center;
@@ -148,8 +142,8 @@ public class PlayerMovement : MonoBehaviour {
         m_FacingRight = !m_FacingRight;
 
         // Multiply the player's x local scale by -1.
-        Vector3 theScale = transform.localScale;
+        Vector3 theScale = character.transform.localScale;
         theScale.x *= -1;
-        transform.localScale = theScale;
+        character.transform.localScale = theScale;
     }
 }
