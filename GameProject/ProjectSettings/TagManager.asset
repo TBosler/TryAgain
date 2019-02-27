@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - Weapon
   layers:
   - Default
   - TransparentFX
@@ -45,6 +46,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Enemy Layer
+    uniqueID: 3334942969
+    locked: 0
   - name: Player layer
     uniqueID: 3245395083
+    locked: 0
+  - name: Dragonwoman
+    uniqueID: 3373706009
     locked: 0

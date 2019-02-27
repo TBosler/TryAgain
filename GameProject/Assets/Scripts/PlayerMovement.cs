@@ -15,18 +15,12 @@ public class PlayerMovement : MonoBehaviour {
     private bool m_FacingRight = true;  // For determining which way the player is currently facing.
     private BoxCollider2D edges;
     private BoxCollider2D body;
-    public GameObject weapon;
     bool attacking = false;
     Animator animator;
-    private SpriteRenderer head;
-    public Sprite testSprite;
-    public Sprite old;
+    public GameObject character;
 
     private void Start()
     {
-        //head = this.transform.Find("/DragonWomen/Dragonwoman (Sprite)/bone_1/bone_17/bone_18/bone_19/bone_20/bone_21/Tail").GetComponent<SpriteRenderer>();
-        //old = head.sprite;
-        weapon = transform.GetChild(0).gameObject;
         body = GetComponent<BoxCollider2D>();
         edges = levelEdges.GetComponent<BoxCollider2D>();
         Vector3 worldPos = edges.bounds.center;
@@ -36,7 +30,7 @@ public class PlayerMovement : MonoBehaviour {
         screenTop = worldPos.y + (edges.bounds.size.y / 2f);
         screenRight = worldPos.x + (edges.bounds.size.x / 2) - (body.size.x / 2f) + (body.offset.x);
         screenLeft = worldPos.x - (edges.bounds.size.x / 2) + (body.size.x / 2f) + (body.offset.x ); ;
-        Debug.Log(weapon.name);
+        //Debug.Log(weapon.name);
     }
 
     private void Update()
@@ -65,7 +59,7 @@ public class PlayerMovement : MonoBehaviour {
 
     private void FixedUpdate()
     {
-        Debug.Log(attacking);
+        //Debug.Log(attacking);
         if(!animator.GetCurrentAnimatorStateInfo(0).IsName("OverhandAttack"))
             Move(horizontalMove * Time.fixedDeltaTime, verticalMove * Time.fixedDeltaTime);
     }
@@ -75,7 +69,20 @@ public class PlayerMovement : MonoBehaviour {
     {
         //Debug.Log(horz);
         //Debug.Log(vert);
-
+        // If the input is moving the player right and the player is facing left...
+        if (horz > 0 && !m_FacingRight)
+        {
+            // ... flip the player.
+            Flip();
+            return;
+        }
+        // Otherwise if the input is moving the player left and the player is facing right...
+        else if (horz < 0 && m_FacingRight)
+        {
+            // ... flip the player.
+            Flip();
+            return;
+        }
 
         float newX = transform.position.x + horz;
         float newY = transform.position.y + vert;
@@ -86,18 +93,7 @@ public class PlayerMovement : MonoBehaviour {
 
         transform.position = new Vector3(newX, newY, 0);
 
-        // If the input is moving the player right and the player is facing left...
-        if (horz > 0 && !m_FacingRight)
-        {
-            // ... flip the player.
-            Flip();
-        }
-        // Otherwise if the input is moving the player left and the player is facing right...
-        else if (horz < 0 && m_FacingRight)
-        {
-            // ... flip the player.
-            Flip();
-        }
+
     }
 
     public IEnumerator attack()
@@ -146,8 +142,8 @@ public class PlayerMovement : MonoBehaviour {
         m_FacingRight = !m_FacingRight;
 
         // Multiply the player's x local scale by -1.
-        Vector3 theScale = transform.localScale;
+        Vector3 theScale = character.transform.localScale;
         theScale.x *= -1;
-        transform.localScale = theScale;
+        character.transform.localScale = theScale;
     }
 }
