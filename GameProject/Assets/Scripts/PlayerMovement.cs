@@ -37,6 +37,7 @@ public class PlayerMovement : MonoBehaviour {
     {
         horizontalMove = Input.GetAxisRaw("Horizontal") * runspeed;
         verticalMove = Input.GetAxisRaw("Vertical") * runspeed;
+        
     }
 
     private void LateUpdate()
