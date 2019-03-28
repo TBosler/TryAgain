@@ -56,3 +56,6 @@ TagManager:
   - name: Dragonwoman
     uniqueID: 3373706009
     locked: 0
+  - name: Ancient Robot
+    uniqueID: 2670337223
+    locked: 0
