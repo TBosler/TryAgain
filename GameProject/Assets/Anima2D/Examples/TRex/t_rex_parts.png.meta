@@ -8,7 +8,7 @@ TextureImporter:
     21300006: t_rex_jaw_open_back
     21300008: t_rex_jaw_open
   externalObjects: {}
-  serializedVersion: 7
+  serializedVersion: 9
   mipmaps:
     mipMapMode: 0
     enableMipMap: 1
@@ -92,7 +92,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 45a5520eaf6c6394484537afb1878e66
+      spriteID: 3c70c15b47029274b83ac0636f8b9897
       vertices: []
       indices: 
       edges: []
@@ -112,7 +112,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 90cf5e96d5022634da80a4162219486c
+      spriteID: ef63f73c0d8343e4faa067188544eee2
       vertices: []
       indices: 
       edges: []
@@ -132,7 +132,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: caa7786e311b5b744bc6a38eeda71b6b
+      spriteID: d4b9a21f3dd65c648b557afc475d36cc
       vertices: []
       indices: 
       edges: []
@@ -152,7 +152,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 26f8335930ba19f4f8dd6503f27ab48c
+      spriteID: 642014345a3adc24ba501961a0521cfc
       vertices: []
       indices: 
       edges: []
@@ -172,7 +172,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a52dedb17cf390a40a35a5d0c0d1ae1a
+      spriteID: cfc0cd6b75d2d0c4bbdc50c1020a5750
       vertices: []
       indices: 
       edges: []
