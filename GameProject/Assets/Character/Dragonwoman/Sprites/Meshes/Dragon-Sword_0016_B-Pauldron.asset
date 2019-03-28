@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Dragon-Sword_0016_B-Pauldron
   m_EditorClassIdentifier: 
   m_ApiVersion: 4
-  m_Sprite: {fileID: 21300000, guid: 15c85dbfbd107c048a0d210e8af67fa8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bf144b322ff34514cb0251a8dde8c8c3, type: 3}
   m_SharedMesh: {fileID: 43207562392466914}
 --- !u!43 &43207562392466914
 Mesh:

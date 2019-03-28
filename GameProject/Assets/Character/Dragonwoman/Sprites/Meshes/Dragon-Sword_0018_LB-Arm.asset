@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Dragon-Sword_0018_LB-Arm
   m_EditorClassIdentifier: 
   m_ApiVersion: 4
-  m_Sprite: {fileID: 21300000, guid: 3aa3099aabb46ed41bbd73061b09483e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3440d03742a3ab140816b4c793521798, type: 3}
   m_SharedMesh: {fileID: 43027358840478806}
 --- !u!43 &43027358840478806
 Mesh:

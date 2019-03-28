@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Dragon-Sword_0020_Tail
   m_EditorClassIdentifier: 
   m_ApiVersion: 4
-  m_Sprite: {fileID: 21300000, guid: 5ae62f50856e94b4f8094810cc8f8b6e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 02c39cee6735d4b4285538b65ca3ebcb, type: 3}
   m_SharedMesh: {fileID: 43789790496460236}
 --- !u!43 &43789790496460236
 Mesh:

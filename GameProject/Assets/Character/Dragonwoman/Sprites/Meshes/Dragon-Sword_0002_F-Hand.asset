@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Dragon-Sword_0002_F-Hand
   m_EditorClassIdentifier: 
   m_ApiVersion: 4
-  m_Sprite: {fileID: 21300000, guid: bda28de76f7c6e44896bd2f7ca68a65d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: eb06c2fa423a175488879a95c79c92a1, type: 3}
   m_SharedMesh: {fileID: 43955708890952126}
 --- !u!43 &43955708890952126
 Mesh:

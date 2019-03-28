@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Dragon-Sword_0004_Thumb
   m_EditorClassIdentifier: 
   m_ApiVersion: 4
-  m_Sprite: {fileID: 21300000, guid: 4a678c4030b518f4b858c80dc97234e1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a4e2847fff0243d4daaaa5600908ae79, type: 3}
   m_SharedMesh: {fileID: 43989667901540218}
 --- !u!43 &43989667901540218
 Mesh:

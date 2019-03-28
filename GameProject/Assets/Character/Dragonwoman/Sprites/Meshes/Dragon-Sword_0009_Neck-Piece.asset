@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Dragon-Sword_0009_Neck-Piece
   m_EditorClassIdentifier: 
   m_ApiVersion: 4
-  m_Sprite: {fileID: 21300000, guid: 99f6305bbd330bc409b5cde924a9bec5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ca096a3105ca45948b844756d7403df2, type: 3}
   m_SharedMesh: {fileID: 43250268642976548}
 --- !u!43 &43250268642976548
 Mesh:
