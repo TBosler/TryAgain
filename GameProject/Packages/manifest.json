@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "com.unity.2d.animation": "2.0.0-preview.1",
+    "com.unity.2d.animation": "2.0.0-preview.2",
     "com.unity.2d.ik": "1.0.8-preview.1",
     "com.unity.2d.pixel-perfect": "1.0.1-preview",
     "com.unity.2d.psdimporter": "1.0.0-preview.1",
@@ -8,7 +8,7 @@
     "com.unity.analytics": "3.2.2",
     "com.unity.cinemachine": "2.2.7",
     "com.unity.collab-proxy": "1.2.15",
-    "com.unity.package-manager-ui": "2.0.3",
+    "com.unity.package-manager-ui": "2.0.7",
     "com.unity.purchasing": "2.0.3",
     "com.unity.render-pipelines.lightweight": "4.10.0-preview",
     "com.unity.shadergraph": "4.10.0-preview",
